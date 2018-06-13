@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 13-jun-2018 15:07:48 by Hibernate Tools 5.2.10.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="resercas" dynamic-insert="false" dynamic-update="false" mutable="true" name="resercas.Reserva" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="reserva">
+        <id name="idreserva" type="java.lang.Integer">
+            <column name="idreserva"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="resercas.Cliente" embed-xml="true" fetch="select" insert="true" name="cliente" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="cliente" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="resercas.Empleado" embed-xml="true" fetch="select" insert="true" name="empleado" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="empleado" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="resercas.Habitacion" embed-xml="true" fetch="select" insert="true" name="habitacion" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="habitacion" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="fechaIni" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="fecha_ini" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="fechaFin" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="fecha_fin" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="estado" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="estado" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

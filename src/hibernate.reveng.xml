@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<table-filter match-catalog="resercas" match-name="cliente" />
+	<table-filter match-catalog="resercas" match-name="empleado" />
+	<table-filter match-catalog="resercas" match-name="habitacion" />
+	<table-filter match-catalog="resercas" match-name="hotel" />
+	<table-filter match-catalog="resercas" match-name="imagen" />
+	<table-filter match-catalog="resercas" match-name="reserva" />
+	<table catalog="resercas" name="cliente" class="resercas.Cliente">
+		<column name="idcli"></column>
+		<column name="password"></column>
+		<column name="nombre"></column>
+		<column name="mail"></column>
+	</table>
+	<table catalog="resercas" name="empleado" class="resercas.Empleado">
+		<column name="idemp"></column>
+		<column name="password"></column>
+		<column name="nombre"></column>
+		<column name="fecha_inc"></column>
+	</table>
+	<table catalog="resercas" name="habitacion" class="resercas.Habitacion">
+		<column name="idhab"></column>
+		<column name="numero"></column>
+		<column name="hotel"></column>
+		<column name="precio"></column>
+		<column name="camas"></column>
+		<column name="imagen"></column>
+	</table>
+	<table catalog="resercas" name="hotel" class="resercas.Hotel">
+		<column name="idhot"></column>
+		<column name="nombre"></column>
+		<column name="telf"></column>
+		<column name="img_hotel"></column>
+		<column name="direc"></column>
+	</table>
+	<table catalog="resercas" name="imagen" class="resercas.Imagen">
+		<column name="id_img"></column>
+		<column name="url"></column>
+		<column name="h_id"></column>
+	</table>
+	<table catalog="resercas" name="reserva" class="resercas.Reserva">
+		<column name="idreserva"></column>
+		<column name="cliente"></column>
+		<column name="habitacion"></column>
+		<column name="estado"></column>
+		<column name="empleado"></column>
+		<column name="fecha_ini"></column>
+		<column name="fecha_fin"></column>
+	</table>
+</hibernate-reverse-engineering>

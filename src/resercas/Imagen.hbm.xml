@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 13-jun-2018 15:07:48 by Hibernate Tools 5.2.10.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="resercas" dynamic-insert="false" dynamic-update="false" mutable="true" name="resercas.Imagen" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="imagen">
+        <id name="idImg" type="java.lang.Integer">
+            <column name="id_img"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="resercas.Habitacion" embed-xml="true" fetch="select" insert="true" name="habitacion" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="h_id" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="url" optimistic-lock="true" type="string" unique="false">
+            <column name="url" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

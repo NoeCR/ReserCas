@@ -1,0 +1,53 @@
+@charset "ISO-8859-1";
+.input-buscar{
+	width: 75%;
+	display: inline;
+	height: 30px;
+	font-size: 20px;
+	margin-top: 20px;
+	font-style: italic;
+}
+.index-lupa{
+	margin-bottom: 6px;
+}
+.index-titulo{
+	font-family: 'Times New Roman', Times,serif;
+	font-size: 25px;
+}
+.index-logo{
+	background-image: url("../img/resercas_index.png");
+	height: 347px;
+	width: 350px;
+}
+footer {
+      background-color: #555;
+      color: white;
+      padding: 10px;    
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+.flex-container-hotel {
+  display: flex;
+  align-items: stretch;
+  background-color: #f1f1f1;
+}
+.flex-container-hotel > div {
+  background-color: DodgerBlue;
+  color: white;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+@media screen and (max-width: 350px) {
+      .index-logo{
+        
+		background-image: url("../img/resercas_index_small.png");
+		height: 198px;
+		width: 200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
