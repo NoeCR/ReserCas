@@ -26,8 +26,10 @@
 			
 			List<Hotel> hoteles =  q.list();
 			
+			
 			request.setAttribute("listadoHoteles", hoteles);			
 			request.getRequestDispatcher("index.jsp").forward(request, response);
+			sesion.close();
 	%>
 	
 </body>

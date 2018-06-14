@@ -27,8 +27,10 @@
 			
 			List<Habitacion> habitaciones =  hab.list();
 			
+			
 			request.setAttribute("listadoHabitaciones", habitaciones);			
 			request.getRequestDispatcher("index.jsp").forward(request, response);
+			sesion.close();
 	%>
 	
 </body>
