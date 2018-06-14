@@ -4,9 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Index Habitaciones</title>
 </head>
 <body>
-	<h1>Esto es el listado de Habitaciones</h1>
+<%@ page import="resercas.Habitacion"%>
+<%@ page import="resercas.Imagen"%>
+<%@ page import="java.util.List"%>
+<%
+	List<Habitacion> habit = (List<Habitacion>)request.getAttribute("listadoHabitaciones");
+	for(Habitacion h: habit){
+%>
+	<div class="flex-container-hotel">
+  		<div style="flex-grow: 2"class="" ></div>  		
+ 		<div style="flex-grow: 8">Hola
+ 			 
+ 		</div>
+	</div>
+<% } %>
 </body>
 </html>

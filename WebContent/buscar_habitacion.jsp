@@ -1,13 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Buscador Hoteles</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Buscar habitaciones</title>
 </head>
 <body>
-	<%@ page import="resercas.Hotel"%>	
+	<%@ page import="resercas.Hotel"%>
+	<%@ page import="resercas.Habitacion"%>
 	<%@ page import="org.hibernate.Session"%>
 	<%@ page import="org.hibernate.SessionFactory"%>
 	<%@ page import="org.hibernate.Transaction"%>
@@ -19,14 +20,14 @@
 		    SessionFactory sf = new Configuration().configure().buildSessionFactory();
 			Session sesion = sf.openSession();
 		   
-			String buscador = request.getParameter("buscador").toLowerCase();
+			String hotel = request.getParameter("idHot");
 			
-			Query q = (Query) sesion.createQuery("from Hotel where localidad like :loc");
-			q.setParameter("loc", "%" + buscador + "%");		
+			Query hab = (Query) sesion.createQuery("from Habitacion where hotel =?");
+			hab.setInteger(0, Integer.parseInt(hotel));		
 			
-			List<Hotel> hoteles =  q.list();
+			List<Habitacion> habitaciones =  hab.list();
 			
-			request.setAttribute("listadoHoteles", hoteles);			
+			request.setAttribute("listadoHabitaciones", habitaciones);			
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 	%>
 	

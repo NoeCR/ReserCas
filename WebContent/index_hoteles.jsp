@@ -4,7 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Index Hoteles</title>
+<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
 <%@ page import="resercas.Hotel"%>
@@ -14,8 +18,16 @@
 	for(Hotel h: hoteles){
 %>
 	<div class="flex-container-hotel">
-  		<div style="flex-grow: 2"><%=h.getNombre() %>1</div>  		
- 		<div style="flex-grow: 8">3</div>
+  		<div style="flex-grow: 2"class="imagen-hotel" ><img src="./img/<%=h.getImgHotel()%>.jpg" alt="Imagen Hotel" /></div>  		
+ 		<div style="flex-grow: 8">
+ 			<form action="buscar_habitacion.jsp" method="post">
+ 			<input name="idHot" type="hidden" value="<%=h.getIdhot()%>">
+ 				<h3><%=h.getNombre() %></h3>
+ 				<p>Dirección: <%=h.getDirec() %>. Teléfono: <%=h.getTelf() %></p> 				
+ 					<label>Ver Habitaciones</label>
+ 					<button type="submit" class="btn btn-primary" name="verHab"><span class="glyphicon glyphicon-bed"></span></button>
+ 			</form>	 
+ 		</div>
 	</div>
 <% } %>
 </body>

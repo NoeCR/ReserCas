@@ -12,6 +12,21 @@
   	
 </head>
 <body>
+<!-- Importaciones de paquetes JAVA -->
+<%@ page import="resercas.Hotel"%>
+<%@ page import="resercas.Habitacion"%>
+<%@ page import="java.util.List"%>
+<%@ page import="org.hibernate.Session"%> 
+<%@ page import="org.hibernate.SessionFactory"%>
+<%@ page import="org.hibernate.Transaction"%>
+<%@ page import="org.hibernate.cfg.Configuration"%>
+<%@ page import="org.hibernate.Query"%>
+<!-- Instancia de session para la página -->
+<%
+	SessionFactory sf = new Configuration().configure().buildSessionFactory();
+	Session sesion = sf.openSession();
+%>
+
 <!-- Menu Header página principal -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -62,27 +77,22 @@
   </div>
 
 <!-- Contenido central de la página principal con el buscador de Hoteles de Castellón -->  
-<%@ page import="resercas.Hotel"%>
-<%@ page import="resercas.Habitacion"%>
-<%@ page import="java.util.List"%>
+
 <%
 	List<Hotel> hoteles = (List<Hotel>)request.getAttribute("listadoHoteles");
-	List<Habitacion> habitaciones = null;
+	List<Habitacion> habitaciones = (List<Habitacion>)request.getAttribute("listadoHabitaciones");	
+	
 	if(hoteles == null){
+		if(habitaciones == null){	
 %>
 	<jsp:include page="index_buscador.jsp" />  
 	
-<% }else{ 
-		if(habitaciones == null){
-			request.setAttribute("listHotel", hoteles);
-			request.getRequestDispatcher("index_hoteles.jsp").forward(request, response);
-	%>  		
-			<jsp:include page="index_hoteles.jsp" /> 	
-			 
-	<% }else{ %>
+<% }else{ %>  	
+			<jsp:include page="index_habitaciones.jsp" /> 		 
+	<% }}else{ %>
+			<jsp:include page="index_hoteles.jsp" /> 
 			
-			<jsp:include page="index_habitaciones.jsp" />  
-<% } } %>
+<% } %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  </body>
