@@ -35,7 +35,7 @@
 			    <span class="caret"></span></button>
 			    <ul class="dropdown-menu">
 			      <li><a href="#">HTML</a></li>
-			      <li><a href="perfil_empleado.jsp">Perfil</a></li>
+			      <li><a href="cp_emp.jsp">Perfil</a></li>
 			      <li><a href="logout.jsp">Salir</a></li>
     </ul>
   </div>

@@ -29,12 +29,12 @@
 	
 	if(e != null){
 		session.setAttribute("empleado", e);
-		response.sendRedirect("index.jsp");
+		response.sendRedirect(request.getContextPath());
 	}else{
 		q = (Query) sesion.createQuery("from Cliente where nombre = ? and password = ?");
 		Cliente c = (Cliente) q.uniqueResult();
 		session.setAttribute("cliente", c);
-		response.sendRedirect("index.jsp");
+		response.sendRedirect(request.getContextPath());
 	}
 	sesion.close();
 %>

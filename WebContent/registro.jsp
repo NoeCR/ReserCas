@@ -30,7 +30,5 @@
 	session.setAttribute("cliente", c);
 	sesion.close();
 %>
-<p><%= nombre %></p>
-<p><%= pass %></p>
 </body>
 </html>
