@@ -23,8 +23,7 @@ public class Reserva implements java.io.Serializable {
 	public Reserva() {
 	}
 
-	public Reserva(Cliente cliente, Empleado empleado, Habitacion habitacion, Date fechaIni, Date fechaFin,
-			String estado) {
+	public Reserva(Cliente cliente, Empleado empleado, Habitacion habitacion, Date fechaIni, Date fechaFin,String estado) {
 		this.cliente = cliente;
 		this.empleado = empleado;
 		this.habitacion = habitacion;
@@ -32,7 +31,15 @@ public class Reserva implements java.io.Serializable {
 		this.fechaFin = fechaFin;
 		this.estado = estado;
 	}
-
+	
+	public Reserva(Cliente cliente, Habitacion habitacion, Date fechaIni, Date fechaFin,String estado) {
+		this.cliente = cliente;		
+		this.habitacion = habitacion;
+		this.fechaIni = fechaIni;
+		this.fechaFin = fechaFin;
+		this.estado = estado;
+	}
+	
 	public Integer getIdreserva() {
 		return this.idreserva;
 	}
