@@ -64,7 +64,7 @@
 		</div>
 	</div>  		
  		<div style="flex-grow: 10">
- 			<form action="reservar.jsp" method="post">
+ 			<form action="cp_cli.jsp" method="post">
  			<input name="idHab" type="hidden" value="<%=h.getIdhab()%>">
  				<h3>habitación <%=h.getHotel().getNombre() %></h3>
  				<p>Camas: <%=h.getCamas() %></p>

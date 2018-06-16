@@ -18,17 +18,17 @@
 		<form action="cp_emp.jsp" method="post">  				
   			<label name="nombre"><%=e.getNombre()%></label><br />
   			<label><%=new SimpleDateFormat("dd/MM/yyyy").format(e.getFechaInc())%></label>
-  			<button type="submit" value="modificar" name="cambio" id="cambio" class="btn btn-default btn-md input-cambio">Modificar</button>
+  			<button type="submit" value="modificar" name="panelCentral" id="cambio" class="btn btn-default btn-md input-cambio">Modificar</button>
   		</form>
  		<%}else if(c != null){ %>
- 			<form action="cp_emp.jsp" method="post">  				
+ 			<form action="cp_cli.jsp" method="post">  				
   			<label name="nombre"><%=c.getNombre()%></label><br />
   			<label name="mail"><%=c.getMail()%></label><br />  			
-  			<button type="submit" value="modificar" name="cambio" id="cambio" class="btn btn-default btn-md input-cambio">Modificar</button>
+  			<button type="submit" value="modificar" name="panelCentral" id="cambio" class="btn btn-default btn-md input-cambio">Modificar</button>
   		</form>
  		
  		<%}else { %>
- 				<span>Error al cargar los datos del usuario</span>
+ 				<span>Usuario no encontrado</span>
  		<% } %>
 </body>
 </html>

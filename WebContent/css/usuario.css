@@ -61,8 +61,44 @@
 	margin-top: 30px;
 }
 .th-text{
-	font-size: 17px;
-	
+	font-size: 17px;	
+}
+#admin-panel{
+  	display: flex;  	
+  	flex-direction: column;
+  	flex-flow: row wrap;
+}
+.item-panel{	
+	width: 33%;
+}
+.item-panel-content{
+	width: 90%;
+    height: 150px;    
+    margin: 10px;
+    border-radius: 5%;
+    text-align: center;
+    transition: all 500ms ease;
+}
+.item-panel-content:hover{
+	background: rgba(0,0,0,0);
+	color: #3a7999;
+	box-shadow: inset 0 0 0 3px #3a7999;
+}
+.item-panel-content:hover{
+	/*background: #888;*/
+	background: rgba(0,0,0,0);
+	color: #3a7999;
+	box-shadow: inset 0 0 0 3px #3a7999;
+}
+.flex-container-reserva{	
+	 display: flex;
+	 flex-direction: row;
+}
+.reserva-usuario{
+	width: 30%;	
+}
+.reserva-habitacion{
+	width: 70%;
 }
 /***********************************************************************************************/
 @media screen and (max-height: 500px){

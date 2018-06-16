@@ -33,12 +33,11 @@
       		<div class="dropdown">
 			    <button class="btn btn-primary dropdown-toggle name-emp" type="button" data-toggle="dropdown"><%=e.getNombre()%>
 			    <span class="caret"></span></button>
-			    <ul class="dropdown-menu">
-			      <li><a href="#">HTML</a></li>
-			      <li><a href="cp_emp.jsp">Perfil</a></li>
+			    <ul class="dropdown-menu">			      
+			      <li><a href="cp_emp.jsp">Gestión</a></li>
 			      <li><a href="logout.jsp">Salir</a></li>
-    </ul>
-  </div>
+    			</ul>	
+  			</div>
       </li>     
     </ul>
   </div>

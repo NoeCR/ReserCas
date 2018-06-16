@@ -11,25 +11,48 @@
   	<link rel="stylesheet" href="./css/usuario.css">
 </head>
 <body>
-<%@ page import="resercas.Empleado"%>	
-<%	   
-			Empleado e = (Empleado) session.getAttribute("empleado");	
-			String uri = request.getParameter("panelCentral");
+<%@ page import="resercas.Cliente"%>
+<%@ page import="resercas.Habitacion"%>
+<%@ page import="org.hibernate.Session"%>
+<%@ page import="org.hibernate.SessionFactory"%>
+<%@ page import="org.hibernate.cfg.Configuration"%>
+<%   
+			SessionFactory sf = new Configuration().configure().buildSessionFactory();
+			Session sesion = sf.openSession();
+			
+			Cliente c = (Cliente) session.getAttribute("cliente");	
+			
+			String uri = request.getParameter("panelCentral");	
+			if(request.getParameter("idHab")!=null){
+				Habitacion hab = (Habitacion) sesion.load(Habitacion.class,Integer.parseInt(request.getParameter("idHab")));
+				session.setAttribute("habitacion", hab);
+				hab.getPrecio(); //daba error al hacer una carga Lazy de la Habitacion, he usado un metodo para forzar que tenga que cargar el objeto en memoria
+				hab.getHotel().getNombre();
+				uri = "reservar";
+				sesion.close();
+			}
 %>
+
 <!--  Menu Página de gestión de empleados -->
+<% if(c != null){ %>
 	<header>
-		<jsp:include page="header_empleado.jsp" />
+		<jsp:include page="header_cliente.jsp" />
 	</header>
+<%}else{ %>
+	<header>
+		<jsp:include page="header.jsp" />
+	</header>
+<% } %>
 <!--  Contenido para la gestion de la web-->	
 	<div class="flex-container-empleado">  		
-  		<div style="flex-grow: 2" class="contenido-izq-emp">
+  		<div style="flex-grow: 2" class="contenido-izq-emp">  			
   			<jsp:include page="showuser.jsp" />
   		</div>  		
   		<div style="flex-grow: 8" class="contenido-cent-emp">
 	  		<% if(uri !=null){ uri +=".jsp";%>
 	  			<jsp:include page="<%=uri%>" />  
 	  		<%}else{ %>
-	  			<jsp:include page="panelusuario.jsp" /> 
+	  			<jsp:include page="panelcliente.jsp" /> 
 	  		<%} %>			
   		</div>
 	</div>

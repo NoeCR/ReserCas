@@ -31,12 +31,20 @@
 		session.setAttribute("empleado", e);
 		response.sendRedirect(request.getContextPath());
 	}else{
-		q = (Query) sesion.createQuery("from Cliente where nombre = ? and password = ?");
-		Cliente c = (Cliente) q.uniqueResult();
-		session.setAttribute("cliente", c);
-		response.sendRedirect(request.getContextPath());
+		Query c = (Query) sesion.createQuery("from Cliente where nombre = ? and password = ?");
+		c.setString(0, nombre);
+		c.setString(1, pass);
+		Cliente cli = (Cliente) c.uniqueResult();
+		sesion.close();
+		if(cli !=null){
+			session.setAttribute("cliente", cli);	
+			response.sendRedirect(request.getContextPath());
+		}		
+		if(e == null && cli == null){
+			response.sendRedirect(request.getContextPath());
+		}
 	}
-	sesion.close();
+	
 %>
 </body>
 </html>

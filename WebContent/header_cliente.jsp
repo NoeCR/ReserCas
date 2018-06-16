@@ -4,17 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Cabecera para los empleados</title>
+<link rel="stylesheet" href="./css/empleado.css">
 </head>
 <body>
-
+<%@ page import="resercas.Cliente"%>
+<%
+	try{
+	Cliente c = (Cliente) session.getAttribute("cliente");
+%>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">ReserCas Clientes</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="index.jsp">Home</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Page 1-1</a></li>
@@ -25,10 +30,23 @@
       <li><a href="#">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li>
+      		<div class="dropdown">
+			    <button class="btn btn-primary dropdown-toggle name-emp" type="button" data-toggle="dropdown"><%=c.getNombre()%>
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">			      
+			      <li><a href="cp_cli.jsp">Gestión</a></li>
+			      <li><a href="logout.jsp">Salir</a></li>
+    			</ul>	
+  			</div>
+      </li>     
     </ul>
   </div>
 </nav>
+<%
+	}catch(Exception e){
+		out.println("No ha iniciado sesion");
+	}
+%>
 </body>
 </html>
