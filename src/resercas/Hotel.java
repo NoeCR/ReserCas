@@ -1,5 +1,5 @@
 package resercas;
-// Generated 13-jun-2018 15:07:48 by Hibernate Tools 5.2.10.Final
+// Generated 16-jun-2018 20:52:08 by Hibernate Tools 5.2.10.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +19,7 @@ public class Hotel implements java.io.Serializable {
 	private String telf;
 	private String imgHotel;
 	private String localidad;
-	private Set<Habitacion> habitaciones = new HashSet<Habitacion>(0);
+	private Set<Habitacion> habitacions = new HashSet<Habitacion>(0);
 
 	public Hotel() {
 	}
@@ -32,13 +32,13 @@ public class Hotel implements java.io.Serializable {
 		this.localidad = localidad;
 	}
 
-	public Hotel(String nombre, String direc, String telf, String imgHotel, String localidad, Set<Habitacion> habitaciones) {
+	public Hotel(String nombre, String direc, String telf, String imgHotel, String localidad, Set<Habitacion> habitacions) {
 		this.nombre = nombre;
 		this.direc = direc;
 		this.telf = telf;
 		this.imgHotel = imgHotel;
 		this.localidad = localidad;
-		this.habitaciones = habitaciones;
+		this.habitacions = habitacions;
 	}
 
 	public Integer getIdhot() {
@@ -90,11 +90,11 @@ public class Hotel implements java.io.Serializable {
 	}
 
 	public Set<Habitacion> getHabitacions() {
-		return this.habitaciones;
+		return this.habitacions;
 	}
 
-	public void setHabitacions(Set<Habitacion> habitaciones) {
-		this.habitaciones = habitaciones;
+	public void setHabitacions(Set<Habitacion> habitacions) {
+		this.habitacions = habitacions;
 	}
 
 }

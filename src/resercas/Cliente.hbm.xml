@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 13-jun-2018 15:07:48 by Hibernate Tools 5.2.10.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-jun-2018 20:52:08 by Hibernate Tools 5.2.10.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="resercas" dynamic-insert="false" dynamic-update="false" mutable="true" name="resercas.Cliente" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="cliente">
         <id name="idcli" type="java.lang.Integer">
@@ -7,7 +7,7 @@
             <generator class="identity"/>
         </id>
         <property generated="never" lazy="false" name="nombre" optimistic-lock="true" type="string" unique="false">
-            <column length="100" name="nombre" not-null="true"/>
+            <column length="100" name="nombre" not-null="true" unique="true"/>
         </property>
         <property generated="never" lazy="false" name="mail" optimistic-lock="true" type="string" unique="false">
             <column length="100" name="mail" not-null="true"/>

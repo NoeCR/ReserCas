@@ -44,24 +44,40 @@
 			    Transaction tx = sesion.beginTransaction();
 			    Query q = (Query) sesion.createQuery("from Reserva where habitacion = ? and ? between fecha_ini and fecha_fin");
 			    q.setInteger(0, h.getIdhab());
-			    q.setDate(1, nuevafecha);
-			    Reserva res = (Reserva) q.uniqueResult();
+			    ///////////// Otro formateo de fecha para ajustarla al formato de la BBDD/////////////////////
+			    java.sql.Date fecha_in_sql = new java.sql.Date(nuevafecha.getTime());	
+			    java.sql.Date fecha_out_sql = new java.sql.Date(fecha_out.getTime());					
+			    q.setDate(1, fecha_in_sql);
+			    Reserva res = (Reserva) q.uniqueResult(); 
+			    out.println(fecha_in_sql);
 			    if(res == null){
-			    	Reserva resok = new Reserva(c,h,nuevafecha,fecha_out,"Disponible");
+			    	Reserva resok = new Reserva(c,h,fecha_in_sql,fecha_out_sql,total);
+			    	out.println(resok.getCliente().getNombre());
+			    	out.println(resok.getHabitacion().getCamas());
+			    	out.println(resok.getFechaIni());
+			    	out.println(resok.getFechaFin());
+			    	out.println(resok.getTotal());
 			    	sesion.save(resok);
 			    	tx.commit();
 			    	out.println("Reserva efectuada!");
 			    }
+			sesion.close();
 			}catch(Exception e){
 				e.getMessage();
 			}
+			
 		}
-		
+		/*
 		out.println(nuevafecha);
+		out.println("");
+		
 		out.println(fecha_out);
+		out.println("");
 		out.println(ok);
+		out.println("");
 		out.println(total);
+		out.println("");
+		*/
 	%>
-	<p><%=fecha %></p>
 </body>
 </html>

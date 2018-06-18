@@ -1,5 +1,5 @@
 package resercas;
-// Generated 13-jun-2018 15:07:48 by Hibernate Tools 5.2.10.Final
+// Generated 16-jun-2018 20:52:08 by Hibernate Tools 5.2.10.Final
 
 import java.util.Date;
 import java.util.HashSet;

@@ -20,9 +20,9 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.List"%>
 <%	   
-	java.util.Date ahora = new java.util.Date();
-	java.util.Date fecha = new java.util.Date(ahora.getTime());
-	try{
+		Date ahora = new java.util.Date();
+		Date fecha = new java.util.Date(ahora.getTime());
+		try{
 			SessionFactory sf = new Configuration().configure().buildSessionFactory();
 			Session sesion = sf.openSession();
 			
