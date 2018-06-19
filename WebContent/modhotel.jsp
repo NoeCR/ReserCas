@@ -32,17 +32,17 @@
 		<div class="flex-container-hotel">
 	  		<div style="flex-grow: 2"class="imagen-hotel" ><img src="./img/<%=h.getImgHotel()%>" alt="Imagen Hotel" /></div>  		
 	 		<div style="flex-grow: 8">
-	 			<form action="buscar_habitacion.jsp" method="post">
-	 			<input name="idHot" type="hidden" value="<%=h.getIdhot()%>">
+	 			<form action="cp_emp.jsp" method="post">
+	 			<input name="idHotel" type="hidden" value="<%=h.getIdhot()%>">
 	 				<h3><%=h.getNombre() %></h3>
 	 				<p>Dirección: <%=h.getDirec() %>. Teléfono: <%=h.getTelf() %></p> 				
 	 					<label>Modificar</label>
-	 					<button type="submit" class="btn btn-primary" name="verHab"><span class="glyphicon glyphicon-bed"></span></button>
+	 					<button type="submit" class="btn btn-primary conf-hotel" name="panelCentral" value="modificar_hotel"><span class="glyphicon glyphicon-cog"></span></button>
 	 			</form>	 
 	 		</div>
 		</div>
 <% }}else{ %>
-		<h1>No se han cargado los Hoteles</h1>
+		<h5>No hay ningun Hotel seleccionado</h1>
 <%} %>
 	</div>
 </div>

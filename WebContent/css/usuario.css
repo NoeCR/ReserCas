@@ -40,7 +40,6 @@
   display: flex;
   align-items: stretch;
   background-color: #f1f1f1;
-  height: 550px;
 }
 .flex-container-empleado > div {
   /*background-color: DodgerBlue;*/
@@ -145,6 +144,9 @@ reserva-img{
 }
 .th_busc_text{
 	width: 25%;
+}
+.conf-hotel{
+	font-size: 8px;
 }
 /***********************************************************************************************/
 @media screen and (max-width: 890px){

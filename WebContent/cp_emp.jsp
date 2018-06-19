@@ -12,10 +12,15 @@
 </head>
 <body>
 <%@ page import="resercas.Empleado"%>	
-
+<%@ page import="resercas.Hotel"%>
+<%@ page import="java.util.List"%>	
 <%	   
 			Empleado e = (Empleado) session.getAttribute("empleado");	
+			List<Hotel> hoteles = (List<Hotel>)request.getAttribute("listadoHotelesBuscador");
 			String uri = request.getParameter("panelCentral");
+			if(hoteles!=null){
+				uri ="modhotel";
+			}
 			if(e != null){
 %>
 <!--  Menu Página de gestión de empleados -->

@@ -28,7 +28,7 @@
 			
 			
 			request.setAttribute("listadoHotelesBuscador", hoteles);			
-			request.getRequestDispatcher("modhotel.jsp").forward(request, response);
+			request.getRequestDispatcher("cp_emp.jsp").forward(request, response);
 			sesion.close();
 	%>
 	
