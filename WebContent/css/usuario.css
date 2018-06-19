@@ -121,6 +121,16 @@ reserva-img{
     float: right;
     margin-top: 30px;
 }
+.cp_list{
+	margin-left: 10px;
+}
+.img-load{
+	margin-top: 10px;
+}
+.img-input{
+	background-color: #f1f1f1;
+	border: none;
+}
 /***********************************************************************************************/
 @media screen and (max-width: 890px){
 .reserva-habitacion {

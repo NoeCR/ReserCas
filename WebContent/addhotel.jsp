@@ -4,9 +4,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Agregar hoteles</title>
+<link rel="stylesheet" href="./css/usuario.css">
 </head>
 <body>
-	<h1>Página para Añadir hoteles desde el panel de control</h1>
+	<form action="cp_emp.jsp" method="post">
+		<div class="input-group">
+		   <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+		   <input id="nombre" type="text" class="form-control" name="nombre-hotel" placeholder="Nombre Hotel">
+		</div>
+		    <br />
+		<div class="input-group">
+		  <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+		  <input id="direc" type="text" class="form-control" name="direc" placeholder="Dirección">
+		</div>
+		   <br />
+		<div class="input-group">
+		  <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+		  <input id="telf" type="tel" class="form-control" name="telf" placeholder="Teléfono">
+		</div>	
+		<div class="input-group img-load">
+		  <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>		 
+   		  <input type="file" id="file" class="form-control img-input" name="file"  accept=".jpg, .jpeg, .png">
+		</div>	
+		   <br />
+		<button type="submit" class="btn btn-default" name="panelCentral" value="registro_hotel">Registro</button>	    
+	</form>
 </body>
 </html>

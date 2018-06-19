@@ -10,7 +10,7 @@
             <column name="cliente" not-null="true"/>
         </many-to-one>
         <many-to-one class="resercas.Empleado" embed-xml="true" fetch="select" insert="true" name="empleado" not-found="exception" optimistic-lock="true" unique="false" update="true">
-            <column name="empleado" not-null="true"/>
+            <column name="empleado" not-null="false"/>
         </many-to-one>
         <many-to-one class="resercas.Habitacion" embed-xml="true" fetch="select" insert="true" name="habitacion" not-found="exception" optimistic-lock="true" unique="false" update="true">
             <column name="habitacion" not-null="true"/>

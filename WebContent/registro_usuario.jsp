@@ -8,6 +8,7 @@
 </head>
 <body>
 <%@ page import="resercas.Cliente"%>
+<%@ page import="resercas.Empleado"%>
 <%@ page import="org.hibernate.Session"%>
 <%@ page import="org.hibernate.Transaction"%>
 <%@ page import="org.hibernate.SessionFactory"%>
@@ -17,7 +18,7 @@
 	SessionFactory sf = new Configuration().configure().buildSessionFactory();
 	Session sesion = sf.openSession();
 	Transaction tx = sesion.beginTransaction();
-	
+	Empleado e = (Empleado) session.getAttribute("empleado");	
 	
 	
 	String nombre = request.getParameter("nombre");
@@ -27,9 +28,8 @@
 	Cliente c = new Cliente(nombre,mail,pass);
 	sesion.save(c);
 	tx.commit();	
-	session.setAttribute("cliente", c);
 	sesion.close();
-	response.sendRedirect(request.getContextPath());
+	response.sendRedirect("cp_emp.jsp");
 %>
 </body>
 </html>

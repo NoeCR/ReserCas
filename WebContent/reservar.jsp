@@ -37,11 +37,15 @@
 				<div class="error-login">
 					<h3>Debe estar registrado para poder reservar</h3>
 				</div>
-			<% }else{ %>
-			<p>Aqui va el formulario de reservas</p>
-			<p>Se ha de hacer la comprobacion de que un usuario este Logeado, si no lo reconoce debera registrarse</p>
-			<p>Antes de hacer la inserccion en la tabla reserva se ha de comprobar que la habitacion este disponible</p>	
-			<p>Se debe hacer el calculo del total de la reserva que sera el precio * las noches</p>
+			<% }else if(h == null){ 					
+					%>
+						<div class="error-login">
+							<h3>Selecciona una habitación</h3>
+						</div>
+						<jsp:include page="index_buscador.jsp" />  	
+					<%
+				}else{			
+			%>
 			<form action="cp_cli.jsp" method="post" class="flex-container-reserva">
 				<div class="reserva-usuario">
 					<input type="hidden" name="iduser" value="<%=c.getIdcli() %>">

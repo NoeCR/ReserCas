@@ -4,32 +4,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Registro Usuario</title>
+<title>Eliminar clientes</title>
 </head>
 <body>
 <%@ page import="resercas.Cliente"%>
-<%@ page import="org.hibernate.Session"%>
-<%@ page import="org.hibernate.Transaction"%>
+<%@ page import="org.hibernate.Session"%> 
 <%@ page import="org.hibernate.SessionFactory"%>
+<%@ page import="org.hibernate.Transaction"%>
 <%@ page import="org.hibernate.cfg.Configuration"%>
 <%@ page import="org.hibernate.Query"%>
+<%@ page import="org.hibernate.Transaction"%>
 <%
+	String id_cli = request.getParameter("optradio");
 	SessionFactory sf = new Configuration().configure().buildSessionFactory();
 	Session sesion = sf.openSession();
 	Transaction tx = sesion.beginTransaction();
 	
-	
-	
-	String nombre = request.getParameter("nombre");
-	String mail = request.getParameter("email");
-	String pass = request.getParameter("password");
-	
-	Cliente c = new Cliente(nombre,mail,pass);
-	sesion.save(c);
-	tx.commit();	
-	session.setAttribute("cliente", c);
+	if(id_cli != null){
+		Cliente cli = (Cliente)sesion.load(Cliente.class,Integer.parseInt(id_cli));
+		sesion.delete(cli);		
+	}
+	tx.commit();
 	sesion.close();
-	response.sendRedirect(request.getContextPath());
+	response.sendRedirect("cp_emp.jsp");
 %>
+	
 </body>
 </html>

@@ -22,7 +22,12 @@ public class Empleado implements java.io.Serializable {
 
 	public Empleado() {
 	}
-
+	
+	public Empleado(String nombre, String password) {
+		this.nombre = nombre;		
+		this.password = password;
+	}
+	
 	public Empleado(String nombre, Date fechaInc, String password) {
 		this.nombre = nombre;
 		this.fechaInc = fechaInc;

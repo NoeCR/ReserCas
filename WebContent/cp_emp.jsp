@@ -15,6 +15,7 @@
 <%	   
 			Empleado e = (Empleado) session.getAttribute("empleado");	
 			String uri = request.getParameter("panelCentral");
+			if(e != null){
 %>
 <!--  Menu Página de gestión de empleados -->
 	<header>
@@ -33,7 +34,9 @@
 	  		<%} %>			
   		</div>
 	</div>
-	
+<%}else { %>
+	<span>Empleado no encontrado</span>
+<% } %>	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>

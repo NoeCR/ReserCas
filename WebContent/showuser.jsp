@@ -17,7 +17,6 @@
 %>
 		<form action="cp_emp.jsp" method="post">  				
   			<label name="nombre"><%=e.getNombre()%></label><br />
-  			<label><%=e.getFechaInc() %></label>
   			<label><%=new SimpleDateFormat("dd/MM/yyyy").format(e.getFechaInc())%></label>
   			<button type="submit" value="modificar" name="panelCentral" id="cambio" class="btn btn-default btn-md input-cambio">Modificar</button>
   		</form>
