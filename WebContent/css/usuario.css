@@ -130,6 +130,21 @@ reserva-img{
 .img-input{
 	background-color: #f1f1f1;
 	border: none;
+	box-shadow: none;
+}
+.modhot_buscador{	
+}
+.hoteles_list{
+	
+}
+.buscar_hotel_in{
+	width: 40%;
+}
+.input_hotel_sc{
+	height: 30px;
+}
+.th_busc_text{
+	width: 25%;
 }
 /***********************************************************************************************/
 @media screen and (max-width: 890px){

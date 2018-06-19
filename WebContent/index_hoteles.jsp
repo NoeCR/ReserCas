@@ -14,7 +14,7 @@
 	for(Hotel h: hoteles){
 %>
 	<div class="flex-container-hotel">
-  		<div style="flex-grow: 2"class="imagen-hotel" ><img src="./img/<%=h.getImgHotel()%>.jpg" alt="Imagen Hotel" /></div>  		
+  		<div style="flex-grow: 2"class="imagen-hotel" ><img src="./img/<%=h.getImgHotel()%>" alt="Imagen Hotel" /></div>  		
  		<div style="flex-grow: 8">
  			<form action="buscar_habitacion.jsp" method="post">
  			<input name="idHot" type="hidden" value="<%=h.getIdhot()%>">

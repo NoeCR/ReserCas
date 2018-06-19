@@ -12,6 +12,7 @@
 </head>
 <body>
 <%@ page import="resercas.Empleado"%>	
+
 <%	   
 			Empleado e = (Empleado) session.getAttribute("empleado");	
 			String uri = request.getParameter("panelCentral");

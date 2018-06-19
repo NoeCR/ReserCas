@@ -19,7 +19,7 @@
 <%@ page import="org.hibernate.Transaction"%>
 <%@ page import="org.hibernate.cfg.Configuration"%>
 <%@ page import="org.hibernate.Query"%>
-	<h3>Pagina donde mostrar los detalles de la reserva y dar la opcion a descargar pdf </h3>
+	
 	<%
 		Cliente c = (Cliente) session.getAttribute("cliente");		
 		Habitacion h = (Habitacion) session.getAttribute("habitacion");
@@ -49,8 +49,7 @@
 			   // java.sql.Date fecha_out_sql = new java.sql.Date(fecha_out.getTime());					
 			    q.setDate(1, nuevafecha);
 			    q.setDate(2, fecha_out);
-			    Reserva res = (Reserva) q.uniqueResult(); 
-			    out.println(fecha_out);
+			    Reserva res = (Reserva) q.uniqueResult(); 			    
 			    if(res == null){
 			    	Reserva resok = new Reserva(c,h,nuevafecha,fecha_out,total);
 			    	out.println(resok.getCliente().getNombre());
@@ -61,7 +60,9 @@
 			    	sesion.save(resok);
 			    	tx.commit();
 			    	out.println("Reserva efectuada!");
-			    }
+			    }else{
+					out.println("No se puede efectuar la reserva por falta de disponibilidad, seleccione otra fecha.");
+				}
 			sesion.close();
 			}catch(Exception e){
 				e.getMessage();
